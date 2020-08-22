@@ -5,18 +5,12 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
+using VirusTotalChecker.Interfaces;
 using VirusTotalChecker.Models.Input;
 
 namespace VirusTotalChecker
 {
-    public interface IHttpRequests
-    {
-        string GET(string url, Dictionary<string, string> additionalHeaders);
-        byte[] UploadFiles(string address,
-            IEnumerable<UploadFile> files,
-            NameValueCollection values,
-            Dictionary<string, string> additionalHeaders);
-    }
+  
     public class HttpRequest : IHttpRequests
     {
         #region POST
